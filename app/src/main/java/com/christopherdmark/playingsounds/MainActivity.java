@@ -46,11 +46,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button1 = (Button)findViewById(R.id.button);
         Button button2 = (Button)findViewById(R.id.button2);
         Button button3 = (Button)findViewById(R.id.button3);
+
+        button1.setOnClickListener(this);
+        button2.setOnClickListener(this);
+        button3.setOnClickListener(this);
     }
 
 
     @Override
     public void onClick(View v) {
+        switch (v.getId()) {
+
+            case R.id.button:
+                soundPool.play(sample1, 1, 1, 0, 0, 1);
+                break;
+
+            case R.id.button2:
+                soundPool.play(sample2, 1, 1, 0, 0, 1);
+                break;
+
+            case R.id.button3:
+                soundPool.play(sample3, 1, 1, 0, 0, 1);
+                break;
+        }
 
     }
 }
